@@ -441,6 +441,17 @@
             }
         }
     </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KL9J8PF0L1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KL9J8PF0L1');
+</script>
+
 </head>
 <body>
     <div class="container">
@@ -448,14 +459,14 @@
         <div id="intro-page">
             <div class="header">
                 <h1>Test de Competencias Docentes en IA</h1>
-                <p>Evaluación integral de competencias en Inteligencia Artificial para educadores</p>
+                <p>Evaluación integral de competencias en Inteligencia Artificial para educadores/as</p>
             </div>
             
             <div class="test-card">
                 <div class="author-info">
                     <h4>Información del Test</h4>
-                    <p><strong>Realizado por:</strong> Prof. Pedro Figueroa con la asistencia de herramientas de IA</p>
-                    <p><strong>Basado en:</strong> AI competency framework for teachers (UNESCO, 2024)</p>
+                    <p><strong>Realizado por:</strong> <a href="https://www.linkedin.com/in/figueroapedro/" target="_blank">Prof. Pedro Figueroa</a> con la asistencia de herramientas de IA</p>
+                    <p><strong>Basado en:</strong> <a href="https://unesdoc.unesco.org/ark:/48223/pf0000393813" target="_blank">Marco de competencias para docentes en materia de IA (Unesco, 2024)</a></p>
                 </div>
 
                 <div class="competency-definition">
@@ -467,7 +478,7 @@
                 </div>
 
                 <div class="disclaimer">
-                    <strong>Aclaración importante:</strong> Los resultados que se obtengan serán solo de referencia con fines orientativos, y no implican ni representan una valoración excluyente de las competencias de cada usuario.
+                    <strong>Aclaración importante:</strong> Los resultados que se obtengan serán solo de referencia con fines orientativos, y no implican ni representan una valoración excluyente de las competencias de cada usuario/a.
                 </div>
                 
                 <h2>Instrucciones</h2>
@@ -481,9 +492,9 @@
                     <li><strong>IA para Desarrollo Profesional:</strong> Evalúa cómo utiliza IA para su crecimiento profesional continuo</li>
                 </ul>
                 
-                <p><strong>Tiempo estimado:</strong> 25-30 minutos</p>
+                <p><strong>Tiempo estimado:</strong> 10-12 minutos</p>
                 <p><strong>Niveles de competencia:</strong> Básico (Adquirir), Intermedio (Profundizar), Avanzado (Crear)</p>
-                <p>Responda con honestidad para obtener una evaluación precisa de sus fortalezas y áreas de mejora.</p>
+                <p>Responda con veracidad para obtener una evaluación precisa de sus fortalezas y áreas de mejora.</p>
                 
                 <div style="text-align: center; margin-top: 30px;">
                     <button class="btn btn-primary" onclick="startTest()">Comenzar Test</button>
@@ -1051,14 +1062,17 @@
             }
         }
 
-        function nextSection() {
-            if (currentSectionIndex < testData.sections.length - 1) {
-                currentSectionIndex++;
-                renderCurrentSection();
-            } else {
-                showResults();
-            }
-        }
+      function nextSection() {
+    if (currentSectionIndex < testData.sections.length - 1) {
+        currentSectionIndex++;
+        renderCurrentSection();
+    } else {
+        showResults();
+    }
+
+    // 🔽 Agrega esta línea para desplazarse hacia arriba automáticamente
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
         function calculateScores() {
             const dimensionScores = {
